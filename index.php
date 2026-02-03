@@ -22,7 +22,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.php" class="navbar-brand">
-                <img src="https://via.placeholder.com/45x45/1a5f7a/ffffff?text=UM" alt="Logo UMPKU">
+                <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
                 <div class="brand-text">
                     <span>Hotspot UMPKU</span>
                     <span class="brand-sub">Internet Kampus</span>
@@ -45,7 +45,7 @@
         <div class="card card-wide">
             <div class="card-body">
                 <div class="hero-section">
-                    <img src="https://via.placeholder.com/100x100/1a5f7a/ffffff?text=UM" alt="Logo" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px;">
+                    <img src="logogram.png" alt="Logo" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px;">
                     <h1>Selamat Datang di Hotspot UMPKU</h1>
                     <p>Layanan internet gratis untuk seluruh civitas akademika Universitas Muhammadiyah Palangkaraya. Nikmati akses internet cepat dan stabil untuk mendukung kegiatan akademik Anda.</p>
                     
