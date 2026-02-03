@@ -167,6 +167,20 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
         .contact-grid {
             grid-template-columns: 1fr;
         }
+        .contact-grid iframe {
+            min-height: 250px !important;
+        }
+        .contact-info-card {
+            padding: 15px !important;
+        }
+    }
+    @media (max-width: 576px) {
+        .contact-grid {
+            gap: 15px;
+        }
+        .contact-grid iframe {
+            min-height: 200px !important;
+        }
     }
     </style>
 </body>
