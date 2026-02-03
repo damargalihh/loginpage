@@ -99,7 +99,7 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
                     <!-- Left: Map -->
                     <div style="border-radius: 12px; overflow: hidden; min-height: 300px;">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.7777039654091!2d110.8297!3d-7.5557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16e9b9c14405%3A0x7df5b3b3a0a0f9e4!2sITS%20PKU%20Muhammadiyah%20Surakarta!5e0!3m2!1sen!2sid!4v1699000000000!5m2!1sen!2sid&markers=color:red%7C-7.5557,110.8297" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1977.5!2d110.8156!3d-7.5389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a144b5c5d6e7f%3A0x1234567890abcdef!2sJl.%20Tulang%20Bawang%20Sel.%20No.26%2C%20Kadipiro%2C%20Banjarsari%2C%20Surakarta!5e0!3m2!1sen!2sid!4v1699000000000!5m2!1sen!2sid" 
                             width="100%" 
                             height="100%" 
                             style="border:0; min-height: 300px;" 
@@ -119,7 +119,7 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
                                 </div>
                                 <div>
                                     <h3 style="font-size: 0.95rem; font-weight: 600; color: var(--gray-800); margin-bottom: 5px;">Office Location</h3>
-                                    <p style="font-size: 0.85rem; color: var(--gray-600); line-height: 1.5;">ICT Gedung A LANTAI 3,<br>ITS PKU Muhammadiyah Surakarta</p>
+                                    <p style="font-size: 0.85rem; color: var(--gray-600); line-height: 1.5;">ICT Gedung A LANTAI 3,<br>Jl. Tulang Bawang Sel. No.26, Kadipiro,<br>Kec. Banjarsari, Kota Surakarta 57136</p>
                                 </div>
                             </div>
                         </div>
