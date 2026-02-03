@@ -97,9 +97,6 @@ $fakultas_list = [
         <div class="container">
             <a href="index.php" class="navbar-brand">
                 <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
-                <div class="brand-text">
-                    <span>Hotspot UMPKU</span>
-                </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>

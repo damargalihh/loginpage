@@ -24,9 +24,6 @@
         <div class="container">
             <a href="index.php" class="navbar-brand">
                 <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
-                <div class="brand-text">
-                    <span>Hotspot UMPKU</span>
-                </div>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>

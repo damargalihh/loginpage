@@ -96,9 +96,6 @@ $ip_address = $_SERVER['REMOTE_ADDR'];
         <div class="container">
             <a href="index.php" class="navbar-brand">
                 <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
-                <div class="brand-text">
-                    <span>Hotspot UMPKU</span>
-                </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -107,50 +104,61 @@ $ip_address = $_SERVER['REMOTE_ADDR'];
                 <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="status.php" class="active"><i class="fas fa-wifi"></i> Status</a></li>
                 <li><a href="contact.php"><i class="fas fa-headset"></i> Kontak</a></li>
-                <li><a href="logout.php" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="card" style="max-width: 500px;">
-            <div class="card-body" style="padding: 40px;">
-                <!-- Profile -->
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.8rem; font-weight: 600;">
-                        <?php echo strtoupper(substr($nama, 0, 1)); ?>
-                    </div>
-                    <h2 style="font-size: 1.3rem; color: var(--gray-800); margin-bottom: 5px;"><?php echo htmlspecialchars($nama); ?></h2>
-                    <p style="color: var(--gray-500); font-size: 0.9rem;">NIM: <?php echo htmlspecialchars($nim); ?></p>
+        <div class="card" style="max-width: 480px;">
+            <div class="card-body" style="padding: 35px;">
+                <!-- Header -->
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <h2 style="font-size: 1.4rem; color: var(--gray-800); margin-bottom: 5px;">Status Penggunaan Internet</h2>
+                    <p style="color: var(--gray-500); font-size: 0.85rem;">Mahasiswa</p>
                 </div>
 
-                <!-- Status -->
-                <div style="background: var(--gray-100); border-radius: 12px; padding: 20px; margin-bottom: 25px;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
-                        <span class="status-dot online"></span>
-                        <span style="font-weight: 600; color: var(--success-color);">Terhubung</span>
-                    </div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div>
-                            <p style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 3px;">IP Address</p>
-                            <p style="font-weight: 500; color: var(--gray-700);"><?php echo $ip_address; ?></p>
-                        </div>
-                        <div>
-                            <p style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 3px;">Durasi</p>
-                            <p style="font-weight: 500; color: var(--gray-700);" id="sessionDuration"><?php echo sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds); ?></p>
-                        </div>
-                    </div>
+                <!-- Status Table -->
+                <div style="background: var(--gray-100); border-radius: 12px; overflow: hidden;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr style="border-bottom: 1px solid var(--gray-200);">
+                            <td style="padding: 12px 15px; font-size: 0.85rem; color: var(--gray-600);">Username</td>
+                            <td style="padding: 12px 15px; font-weight: 500; color: var(--gray-800);"><?php echo htmlspecialchars($nim); ?></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--gray-200);">
+                            <td style="padding: 12px 15px; font-size: 0.85rem; color: var(--gray-600);">IP Address</td>
+                            <td style="padding: 12px 15px; font-weight: 500; color: var(--gray-800);"><?php echo $ip_address; ?></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--gray-200);">
+                            <td style="padding: 12px 15px; font-size: 0.85rem; color: var(--gray-600);">MAC Address</td>
+                            <td style="padding: 12px 15px; font-weight: 500; color: var(--gray-800);"><?php echo isset($_SERVER['HTTP_X_MAC_ADDRESS']) ? $_SERVER['HTTP_X_MAC_ADDRESS'] : 'F8:A2:D6:BD:0F:EF'; ?></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--gray-200);">
+                            <td style="padding: 12px 15px; font-size: 0.85rem; color: var(--gray-600);">Connected / Left</td>
+                            <td style="padding: 12px 15px; font-weight: 500; color: var(--gray-800);"><span id="sessionDuration"><?php echo sprintf('%dh%dm%ds', $hours, $minutes, $seconds); ?></span> / <span style="color: var(--success-color);">4h40m59s</span></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--gray-200);">
+                            <td style="padding: 12px 15px; font-size: 0.85rem; color: var(--gray-600);">Download / Upload</td>
+                            <td style="padding: 12px 15px; font-weight: 500; color: var(--gray-800);">
+                                <span style="color: var(--primary-color);">40.2 MiB</span> / <span style="color: var(--secondary-color);">25.9 MiB</span>
+                            </td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--gray-200);">
+                            <td style="padding: 12px 15px; font-size: 0.85rem; color: var(--gray-600);">Sisa Kuota</td>
+                            <td style="padding: 12px 15px; font-weight: 600; color: var(--success-color);">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 12px 15px; font-size: 0.85rem; color: var(--gray-600);">Status Refresh</td>
+                            <td style="padding: 12px 15px; font-weight: 500; color: var(--gray-800);">1m</td>
+                        </tr>
+                    </table>
                 </div>
 
                 <!-- Logout Button -->
-                <a href="logout.php" class="btn btn-danger btn-block">
+                <a href="logout.php" class="btn btn-danger btn-block" style="margin-top: 25px;">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>
-
-                <div class="footer-text" style="margin-top: 25px;">
-                    <a href="contact.php" class="link" style="font-size: 0.9rem;"><i class="fas fa-headset"></i> Laporkan Masalah</a>
-                </div>
             </div>
         </div>
     </main>
@@ -164,8 +172,7 @@ $ip_address = $_SERVER['REMOTE_ADDR'];
             let hours = Math.floor(duration / 3600);
             let minutes = Math.floor((duration % 3600) / 60);
             let seconds = duration % 60;
-            document.getElementById('sessionDuration').textContent = 
-                String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+            document.getElementById('sessionDuration').textContent = hours + 'h' + minutes + 'm' + seconds + 's';
         }
         setInterval(updateSessionDuration, 1000);
     </script>

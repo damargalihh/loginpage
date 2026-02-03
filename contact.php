@@ -65,9 +65,6 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
         <div class="container">
             <a href="index.php" class="navbar-brand">
                 <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
-                <div class="brand-text">
-                    <span>Hotspot UMPKU</span>
-                </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -89,77 +86,88 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="card" style="max-width: 550px;">
-            <div class="card-body" style="padding: 40px;">
+        <div class="card" style="max-width: 900px; width: 95%;">
+            <div class="card-body" style="padding: 35px;">
+                <!-- Header -->
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <img src="logogram.png" alt="Logo" style="width: 70px; height: 70px; margin-bottom: 15px;">
-                    <h1 style="font-size: 1.5rem; color: var(--gray-800);">IT Support</h1>
-                    <p style="color: var(--gray-500); font-size: 0.9rem;">Hubungi kami jika ada kendala</p>
+                    <h1 style="font-size: 1.6rem; color: var(--gray-800); margin-bottom: 5px;">Hubungi Kami</h1>
+                    <p style="color: var(--gray-500); font-size: 0.9rem;">Layanan Teknologi Informasi</p>
                 </div>
 
-                <!-- Quick Contact -->
-                <div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
-                    <a href="tel:+625363221234" style="flex: 1; min-width: 120px; text-decoration: none; padding: 15px; background: var(--gray-100); border-radius: 10px; text-align: center;">
-                        <i class="fas fa-phone" style="color: var(--primary-color); font-size: 1.2rem;"></i>
-                        <p style="margin: 8px 0 0; font-size: 0.85rem; color: var(--gray-700);">(0536) 3221234</p>
-                    </a>
-                    <a href="https://wa.me/6281234567890" target="_blank" style="flex: 1; min-width: 120px; text-decoration: none; padding: 15px; background: var(--gray-100); border-radius: 10px; text-align: center;">
-                        <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i>
-                        <p style="margin: 8px 0 0; font-size: 0.85rem; color: var(--gray-700);">WhatsApp</p>
-                    </a>
+                <!-- Two Column Layout -->
+                <div class="contact-grid">
+                    <!-- Left: Map -->
+                    <div style="border-radius: 12px; overflow: hidden; min-height: 300px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1086858949907!2d110.82889931477557!3d-7.555648794555099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16e9b9c14405%3A0x7df5b3b3a0a0f9e4!2sITS%20PKU%20Muhammadiyah%20Surakarta!5e0!3m2!1sen!2sid!4v1699000000000!5m2!1sen!2sid" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; min-height: 300px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                    <!-- Right: Contact Info -->
+                    <div style="display: flex; flex-direction: column; gap: 15px;">
+                        <!-- Office Location -->
+                        <div style="background: var(--gray-100); border-radius: 12px; padding: 20px;">
+                            <div style="display: flex; align-items: flex-start; gap: 15px;">
+                                <div style="width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white; font-size: 1.2rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 0.95rem; font-weight: 600; color: var(--gray-800); margin-bottom: 5px;">Office Location</h3>
+                                    <p style="font-size: 0.85rem; color: var(--gray-600); line-height: 1.5;">ICT Gedung A LANTAI 3,<br>ITS PKU Muhammadiyah Surakarta</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div style="background: var(--gray-100); border-radius: 12px; padding: 20px;">
+                            <div style="display: flex; align-items: flex-start; gap: 15px;">
+                                <div style="width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-phone-alt" style="color: white; font-size: 1.2rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 0.95rem; font-weight: 600; color: var(--gray-800); margin-bottom: 5px;">Phone Number</h3>
+                                    <p style="font-size: 0.85rem; color: var(--gray-600);">(0271) 734 955</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email Address -->
+                        <div style="background: var(--gray-100); border-radius: 12px; padding: 20px;">
+                            <div style="display: flex; align-items: flex-start; gap: 15px;">
+                                <div style="width: 45px; height: 45px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-envelope" style="color: white; font-size: 1.2rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="font-size: 0.95rem; font-weight: 600; color: var(--gray-800); margin-bottom: 5px;">Email Address</h3>
+                                    <p style="font-size: 0.85rem; color: var(--gray-600);">General: <a href="mailto:Info@itspku.ac.id" style="color: var(--primary-color); text-decoration: none;">Info@itspku.ac.id</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <?php if ($error): ?>
-                <div class="alert alert-danger">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <?php echo $error; ?>
-                </div>
-                <?php endif; ?>
-
-                <?php if ($success): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i>
-                    <?php echo $success; ?>
-                </div>
-                <?php endif; ?>
-
-                <form action="contact.php" method="POST" id="contactForm">
-                    <div class="form-group">
-                        <label for="nama">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama lengkap" required
-                               value="<?php echo htmlspecialchars($prefill_nama ?: ($_POST['nama'] ?? '')); ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email aktif" required
-                               value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subjek">Masalah</label>
-                        <select class="form-control" id="subjek" name="subjek" required>
-                            <option value="">Pilih kategori</option>
-                            <option value="Tidak Bisa Login">Tidak Bisa Login</option>
-                            <option value="Lupa Password">Lupa Password</option>
-                            <option value="Koneksi Lambat">Koneksi Lambat</option>
-                            <option value="Lainnya">Lainnya</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pesan">Pesan</label>
-                        <textarea class="form-control" id="pesan" name="pesan" rows="4" placeholder="Jelaskan masalah Anda" required><?php echo htmlspecialchars($_POST['pesan'] ?? ''); ?></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-paper-plane"></i> Kirim
-                    </button>
-                </form>
             </div>
         </div>
     </main>
 
     <script src="js/main.js"></script>
+
+    <style>
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
 </body>
 </html>
