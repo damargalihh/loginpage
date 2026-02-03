@@ -96,10 +96,9 @@ $fakultas_list = [
     <nav class="navbar">
         <div class="container">
             <a href="index.php" class="navbar-brand">
-                <img src="https://via.placeholder.com/45x45/1a5f7a/ffffff?text=UM" alt="Logo UMPKU">
+                <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
                 <div class="brand-text">
                     <span>Hotspot UMPKU</span>
-                    <span class="brand-sub">Internet Kampus</span>
                 </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
@@ -109,20 +108,20 @@ $fakultas_list = [
                 <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 <li><a href="register.php" class="active"><i class="fas fa-user-plus"></i> Daftar</a></li>
-                <li><a href="contact.php"><i class="fas fa-envelope"></i> Kontak</a></li>
+                <li><a href="contact.php"><i class="fas fa-headset"></i> Kontak</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="card card-wide">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/80x80/ffffff/1a5f7a?text=UM" alt="Logo" class="logo">
-                <h1>Daftar Akun Baru</h1>
-                <p>Buat akun untuk mengakses layanan hotspot kampus</p>
-            </div>
-            <div class="card-body">
+        <div class="card" style="max-width: 480px;">
+            <div class="card-body" style="padding: 40px;">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <img src="logogram.png" alt="Logo" style="width: 70px; height: 70px; margin-bottom: 15px;">
+                    <h1 style="font-size: 1.5rem; color: var(--gray-800);">Daftar Akun</h1>
+                </div>
+
                 <?php if ($error): ?>
                 <div class="alert alert-danger">
                     <i class="fas fa-exclamation-circle"></i>
@@ -134,176 +133,59 @@ $fakultas_list = [
                 <div class="alert alert-success">
                     <i class="fas fa-check-circle"></i>
                     <?php echo $success; ?>
-                    <br><br>
-                    <a href="login.php" class="btn btn-success">
-                        <i class="fas fa-sign-in-alt"></i> Login Sekarang
-                    </a>
                 </div>
+                <a href="login.php" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt"></i> Login Sekarang
+                </a>
                 <?php else: ?>
 
-                <!-- Progress Steps -->
-                <div class="steps">
-                    <div class="step active">
-                        <span class="step-number">1</span>
-                        <span>Data Diri</span>
-                    </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <span class="step-number">2</span>
-                        <span>Verifikasi</span>
-                    </div>
-                    <div class="step-line"></div>
-                    <div class="step">
-                        <span class="step-number">3</span>
-                        <span>Selesai</span>
-                    </div>
-                </div>
-
                 <form action="register.php" method="POST" id="registerForm">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="nim">NIM <span style="color: var(--danger-color);">*</span></label>
-                                <div class="input-group">
-                                    <i class="fas fa-id-card"></i>
-                                    <input type="text" class="form-control" id="nim" name="nim" 
-                                           placeholder="Contoh: 2021010001" required
-                                           value="<?php echo isset($_POST['nim']) ? htmlspecialchars($_POST['nim']) : ''; ?>">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="nama_lengkap">Nama Lengkap <span style="color: var(--danger-color);">*</span></label>
-                                <div class="input-group">
-                                    <i class="fas fa-user"></i>
-                                    <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" 
-                                           placeholder="Nama sesuai KTM" required
-                                           value="<?php echo isset($_POST['nama_lengkap']) ? htmlspecialchars($_POST['nama_lengkap']) : ''; ?>">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="email">Email <span style="color: var(--danger-color);">*</span></label>
-                                <div class="input-group">
-                                    <i class="fas fa-envelope"></i>
-                                    <input type="email" class="form-control" id="email" name="email" 
-                                           placeholder="email@student.umpku.ac.id" required
-                                           value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="no_hp">No. HP/WhatsApp</label>
-                                <div class="input-group">
-                                    <i class="fas fa-phone"></i>
-                                    <input type="tel" class="form-control" id="no_hp" name="no_hp" 
-                                           placeholder="08xxxxxxxxxx"
-                                           value="<?php echo isset($_POST['no_hp']) ? htmlspecialchars($_POST['no_hp']) : ''; ?>">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="fakultas">Fakultas</label>
-                                <select class="form-control" id="fakultas" name="fakultas">
-                                    <option value="">-- Pilih Fakultas --</option>
-                                    <?php foreach ($fakultas_list as $fak): ?>
-                                    <option value="<?php echo $fak; ?>" <?php echo (isset($_POST['fakultas']) && $_POST['fakultas'] === $fak) ? 'selected' : ''; ?>>
-                                        <?php echo $fak; ?>
-                                    </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="prodi">Program Studi</label>
-                                <div class="input-group">
-                                    <i class="fas fa-graduation-cap"></i>
-                                    <input type="text" class="form-control" id="prodi" name="prodi" 
-                                           placeholder="Nama Program Studi"
-                                           value="<?php echo isset($_POST['prodi']) ? htmlspecialchars($_POST['prodi']) : ''; ?>">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="password">Password <span style="color: var(--danger-color);">*</span></label>
-                                <div class="input-group">
-                                    <i class="fas fa-lock"></i>
-                                    <input type="password" class="form-control" id="password" name="password" 
-                                           placeholder="Minimal 6 karakter" required minlength="6">
-                                    <button type="button" class="toggle-password" onclick="togglePassword('password', 'toggleIcon1')">
-                                        <i class="fas fa-eye" id="toggleIcon1"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="confirm_password">Konfirmasi Password <span style="color: var(--danger-color);">*</span></label>
-                                <div class="input-group">
-                                    <i class="fas fa-lock"></i>
-                                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" 
-                                           placeholder="Ulangi password" required>
-                                    <button type="button" class="toggle-password" onclick="togglePassword('confirm_password', 'toggleIcon2')">
-                                        <i class="fas fa-eye" id="toggleIcon2"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="nim">NIM</label>
+                        <input type="text" class="form-control" id="nim" name="nim" placeholder="Nomor Induk Mahasiswa" required
+                               value="<?php echo isset($_POST['nim']) ? htmlspecialchars($_POST['nim']) : ''; ?>">
                     </div>
 
                     <div class="form-group">
-                        <div class="form-check">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">Saya menyetujui <a href="#" class="link">Syarat & Ketentuan</a> penggunaan layanan hotspot UMPKU</label>
-                        </div>
+                        <label for="nama_lengkap">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Nama sesuai KTM" required
+                               value="<?php echo isset($_POST['nama_lengkap']) ? htmlspecialchars($_POST['nama_lengkap']) : ''; ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email aktif" required
+                               value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Minimal 6 karakter" required minlength="6">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm_password">Konfirmasi Password</label>
+                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Ulangi password" required>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-user-plus"></i> Daftar Sekarang
+                        <i class="fas fa-user-plus"></i> Daftar
                     </button>
                 </form>
 
-                <div class="divider">
-                    <span>atau</span>
-                </div>
-
-                <div style="text-align: center;">
-                    <p style="color: var(--gray-600);">Sudah punya akun?</p>
-                    <a href="login.php" class="btn btn-outline btn-block" style="margin-top: 10px;">
-                        <i class="fas fa-sign-in-alt"></i> Masuk
-                    </a>
+                <div class="footer-text" style="margin-top: 25px;">
+                    <p>Sudah punya akun? <a href="login.php" class="link">Login</a></p>
                 </div>
                 <?php endif; ?>
-
-                <div class="footer-text">
-                    <p>Butuh bantuan? <a href="contact.php" class="link">Hubungi IT Support</a></p>
-                </div>
             </div>
         </div>
     </main>
 
     <script src="js/main.js"></script>
     <script>
-        // Password match validation
         document.getElementById('registerForm')?.addEventListener('submit', function(e) {
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm_password').value;
-            
             if (password !== confirmPassword) {
                 e.preventDefault();
                 alert('Konfirmasi password tidak cocok!');

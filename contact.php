@@ -64,10 +64,9 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
     <nav class="navbar">
         <div class="container">
             <a href="index.php" class="navbar-brand">
-                <img src="https://via.placeholder.com/45x45/1a5f7a/ffffff?text=UM" alt="Logo UMPKU">
+                <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
                 <div class="brand-text">
                     <span>Hotspot UMPKU</span>
-                    <span class="brand-sub">Internet Kampus</span>
                 </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
@@ -76,8 +75,8 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
                 <?php if (isset($_SESSION['user_id'])): ?>
-                <li><a href="status.php"><i class="fas fa-chart-line"></i> Status</a></li>
-                <li><a href="contact.php" class="active"><i class="fas fa-envelope"></i> Kontak</a></li>
+                <li><a href="status.php"><i class="fas fa-wifi"></i> Status</a></li>
+                <li><a href="contact.php" class="active"><i class="fas fa-headset"></i> Kontak</a></li>
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                 <?php else: ?>
                 <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
@@ -90,46 +89,24 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="card card-wide">
-            <div class="card-header">
-                <h1><i class="fas fa-headset"></i> Hubungi IT Support</h1>
-                <p>Kami siap membantu mengatasi kendala Anda</p>
-            </div>
-            <div class="card-body">
-                <!-- Contact Info Cards -->
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Alamat</h4>
-                            <p>Gedung UPT TIK Lt. 2<br>Kampus UMPKU<br>Jl. RTA Milono Km. 1,5 Palangkaraya</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div>
-                            <h4>Telepon</h4>
-                            <p>(0536) 3221234<br>Ext. 123</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>it.support@umpku.ac.id<br>helpdesk@umpku.ac.id</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h4>WhatsApp</h4>
-                            <p>+62 812-3456-7890<br>(Chat Only)</p>
-                        </div>
-                    </div>
+        <div class="card" style="max-width: 550px;">
+            <div class="card-body" style="padding: 40px;">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <img src="logogram.png" alt="Logo" style="width: 70px; height: 70px; margin-bottom: 15px;">
+                    <h1 style="font-size: 1.5rem; color: var(--gray-800);">IT Support</h1>
+                    <p style="color: var(--gray-500); font-size: 0.9rem;">Hubungi kami jika ada kendala</p>
                 </div>
 
-                <div class="divider">
-                    <span>atau kirim pesan langsung</span>
+                <!-- Quick Contact -->
+                <div style="display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap;">
+                    <a href="tel:+625363221234" style="flex: 1; min-width: 120px; text-decoration: none; padding: 15px; background: var(--gray-100); border-radius: 10px; text-align: center;">
+                        <i class="fas fa-phone" style="color: var(--primary-color); font-size: 1.2rem;"></i>
+                        <p style="margin: 8px 0 0; font-size: 0.85rem; color: var(--gray-700);">(0536) 3221234</p>
+                    </a>
+                    <a href="https://wa.me/6281234567890" target="_blank" style="flex: 1; min-width: 120px; text-decoration: none; padding: 15px; background: var(--gray-100); border-radius: 10px; text-align: center;">
+                        <i class="fab fa-whatsapp" style="color: #25D366; font-size: 1.2rem;"></i>
+                        <p style="margin: 8px 0 0; font-size: 0.85rem; color: var(--gray-700);">WhatsApp</p>
+                    </a>
                 </div>
 
                 <?php if ($error): ?>
@@ -147,105 +124,38 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
                 <?php endif; ?>
 
                 <form action="contact.php" method="POST" id="contactForm">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="nama">Nama Lengkap <span style="color: var(--danger-color);">*</span></label>
-                                <div class="input-group">
-                                    <i class="fas fa-user"></i>
-                                    <input type="text" class="form-control" id="nama" name="nama" 
-                                           placeholder="Nama Anda" required
-                                           value="<?php echo htmlspecialchars($prefill_nama ?: ($_POST['nama'] ?? '')); ?>">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-group">
-                                <label for="email">Email <span style="color: var(--danger-color);">*</span></label>
-                                <div class="input-group">
-                                    <i class="fas fa-envelope"></i>
-                                    <input type="email" class="form-control" id="email" name="email" 
-                                           placeholder="email@student.umpku.ac.id" required
-                                           value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama lengkap" required
+                               value="<?php echo htmlspecialchars($prefill_nama ?: ($_POST['nama'] ?? '')); ?>">
                     </div>
 
                     <div class="form-group">
-                        <label for="subjek">Subjek <span style="color: var(--danger-color);">*</span></label>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email aktif" required
+                               value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subjek">Masalah</label>
                         <select class="form-control" id="subjek" name="subjek" required>
-                            <option value="">-- Pilih Kategori Masalah --</option>
-                            <option value="Tidak Bisa Login" <?php echo (($_POST['subjek'] ?? '') === 'Tidak Bisa Login') ? 'selected' : ''; ?>>Tidak Bisa Login</option>
-                            <option value="Lupa Password" <?php echo (($_POST['subjek'] ?? '') === 'Lupa Password') ? 'selected' : ''; ?>>Lupa Password</option>
-                            <option value="Koneksi Lambat" <?php echo (($_POST['subjek'] ?? '') === 'Koneksi Lambat') ? 'selected' : ''; ?>>Koneksi Lambat</option>
-                            <option value="Tidak Bisa Terhubung" <?php echo (($_POST['subjek'] ?? '') === 'Tidak Bisa Terhubung') ? 'selected' : ''; ?>>Tidak Bisa Terhubung ke WiFi</option>
-                            <option value="Sering Terputus" <?php echo (($_POST['subjek'] ?? '') === 'Sering Terputus') ? 'selected' : ''; ?>>Koneksi Sering Terputus</option>
-                            <option value="Akun Diblokir" <?php echo (($_POST['subjek'] ?? '') === 'Akun Diblokir') ? 'selected' : ''; ?>>Akun Diblokir</option>
-                            <option value="Permintaan Aktivasi" <?php echo (($_POST['subjek'] ?? '') === 'Permintaan Aktivasi') ? 'selected' : ''; ?>>Permintaan Aktivasi Akun</option>
-                            <option value="Lainnya" <?php echo (($_POST['subjek'] ?? '') === 'Lainnya') ? 'selected' : ''; ?>>Lainnya</option>
+                            <option value="">Pilih kategori</option>
+                            <option value="Tidak Bisa Login">Tidak Bisa Login</option>
+                            <option value="Lupa Password">Lupa Password</option>
+                            <option value="Koneksi Lambat">Koneksi Lambat</option>
+                            <option value="Lainnya">Lainnya</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="pesan">Deskripsi Masalah <span style="color: var(--danger-color);">*</span></label>
-                        <textarea class="form-control" id="pesan" name="pesan" rows="5" 
-                                  placeholder="Jelaskan masalah Anda secara detail. Sertakan informasi seperti:&#10;- NIM Anda&#10;- Perangkat yang digunakan&#10;- Lokasi di kampus&#10;- Waktu kejadian" required><?php echo htmlspecialchars($_POST['pesan'] ?? ''); ?></textarea>
+                        <label for="pesan">Pesan</label>
+                        <textarea class="form-control" id="pesan" name="pesan" rows="4" placeholder="Jelaskan masalah Anda" required><?php echo htmlspecialchars($_POST['pesan'] ?? ''); ?></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-paper-plane"></i> Kirim Pesan
+                        <i class="fas fa-paper-plane"></i> Kirim
                     </button>
                 </form>
-
-                <div class="divider">
-                    <span>FAQ - Pertanyaan Umum</span>
-                </div>
-
-                <!-- FAQ Section -->
-                <div class="status-card">
-                    <details style="margin-bottom: 15px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">
-                            <i class="fas fa-question-circle"></i> Bagaimana cara mendaftar akun hotspot?
-                        </summary>
-                        <p style="margin-top: 10px; padding-left: 25px; color: var(--gray-600);">
-                            Klik menu "Daftar" di halaman utama, isi form dengan data yang valid (NIM, Email, dll), 
-                            kemudian verifikasi akun Anda. Setelah diaktivasi oleh admin, Anda dapat login.
-                        </p>
-                    </details>
-                    <details style="margin-bottom: 15px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">
-                            <i class="fas fa-question-circle"></i> Kenapa saya tidak bisa login?
-                        </summary>
-                        <p style="margin-top: 10px; padding-left: 25px; color: var(--gray-600);">
-                            Pastikan NIM dan password yang dimasukkan benar. Jika akun baru didaftarkan, 
-                            tunggu aktivasi dari admin. Hubungi IT Support jika masalah berlanjut.
-                        </p>
-                    </details>
-                    <details style="margin-bottom: 15px;">
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">
-                            <i class="fas fa-question-circle"></i> Bagaimana cara reset password?
-                        </summary>
-                        <p style="margin-top: 10px; padding-left: 25px; color: var(--gray-600);">
-                            Kirim permintaan reset password melalui form kontak ini atau datang langsung 
-                            ke UPT TIK dengan membawa KTM untuk verifikasi identitas.
-                        </p>
-                    </details>
-                    <details>
-                        <summary style="cursor: pointer; font-weight: 600; color: var(--primary-color);">
-                            <i class="fas fa-question-circle"></i> Berapa batas kuota internet?
-                        </summary>
-                        <p style="margin-top: 10px; padding-left: 25px; color: var(--gray-600);">
-                            Setiap mahasiswa mendapat kuota 1 GB per hari. Kuota akan direset setiap tengah malam.
-                            Untuk kebutuhan akademik khusus, hubungi UPT TIK untuk pengajuan tambahan kuota.
-                        </p>
-                    </details>
-                </div>
-
-                <div class="footer-text">
-                    <p><i class="fas fa-clock"></i> Jam Operasional IT Support: Senin - Jumat, 08:00 - 16:00 WIB</p>
-                    <p>Response time: 1x24 jam kerja</p>
-                </div>
             </div>
         </div>
     </main>

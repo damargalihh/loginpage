@@ -25,7 +25,6 @@
                 <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
                 <div class="brand-text">
                     <span>Hotspot UMPKU</span>
-                    <span class="brand-sub">Internet Kampus</span>
                 </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
@@ -35,7 +34,7 @@
                 <li><a href="index.php" class="active"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="login.php"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 <li><a href="register.php"><i class="fas fa-user-plus"></i> Daftar</a></li>
-                <li><a href="contact.php"><i class="fas fa-envelope"></i> Kontak</a></li>
+                <li><a href="contact.php"><i class="fas fa-headset"></i> Kontak</a></li>
             </ul>
         </div>
     </nav>

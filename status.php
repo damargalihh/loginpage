@@ -95,10 +95,9 @@ $ip_address = $_SERVER['REMOTE_ADDR'];
     <nav class="navbar">
         <div class="container">
             <a href="index.php" class="navbar-brand">
-                <img src="https://via.placeholder.com/45x45/1a5f7a/ffffff?text=UM" alt="Logo UMPKU">
+                <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
                 <div class="brand-text">
                     <span>Hotspot UMPKU</span>
-                    <span class="brand-sub">Internet Kampus</span>
                 </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
@@ -106,149 +105,51 @@ $ip_address = $_SERVER['REMOTE_ADDR'];
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="status.php" class="active"><i class="fas fa-chart-line"></i> Status</a></li>
-                <li><a href="contact.php"><i class="fas fa-envelope"></i> Kontak</a></li>
-                <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                <li><a href="status.php" class="active"><i class="fas fa-wifi"></i> Status</a></li>
+                <li><a href="contact.php"><i class="fas fa-headset"></i> Kontak</a></li>
+                <li><a href="logout.php" class="btn-logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="card card-wide">
-            <div class="card-header">
-                <h1><i class="fas fa-wifi"></i> Status Koneksi</h1>
-                <p>Pantau status koneksi internet Anda</p>
-            </div>
-            <div class="card-body">
-                <!-- Profile Section -->
-                <div class="profile-header">
-                    <div class="profile-avatar">
+        <div class="card" style="max-width: 500px;">
+            <div class="card-body" style="padding: 40px;">
+                <!-- Profile -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <div style="width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; color: white; font-size: 1.8rem; font-weight: 600;">
                         <?php echo strtoupper(substr($nama, 0, 1)); ?>
                     </div>
-                    <div class="profile-info">
-                        <h3><?php echo htmlspecialchars($nama); ?></h3>
-                        <p><i class="fas fa-id-card"></i> NIM: <?php echo htmlspecialchars($nim); ?></p>
-                        <?php if ($user): ?>
-                        <p><i class="fas fa-building"></i> <?php echo htmlspecialchars($user['fakultas'] ?? 'Belum diisi'); ?></p>
-                        <?php endif; ?>
-                    </div>
-                    <div style="margin-left: auto;">
-                        <span class="badge badge-success"><i class="fas fa-check-circle"></i> Online</span>
-                    </div>
+                    <h2 style="font-size: 1.3rem; color: var(--gray-800); margin-bottom: 5px;"><?php echo htmlspecialchars($nama); ?></h2>
+                    <p style="color: var(--gray-500); font-size: 0.9rem;">NIM: <?php echo htmlspecialchars($nim); ?></p>
                 </div>
 
-                <!-- Status Card -->
-                <div class="status-card">
-                    <div class="status-header">
-                        <div class="status-indicator">
-                            <span class="status-dot online"></span>
-                            <span style="font-weight: 600; color: var(--success-color);">Terhubung ke Internet</span>
-                        </div>
-                        <span style="color: var(--gray-600); font-size: 0.9rem;">
-                            <i class="fas fa-clock"></i> Sesi dimulai: <?php echo date('H:i:s', $login_time); ?>
-                        </span>
+                <!-- Status -->
+                <div style="background: var(--gray-100); border-radius: 12px; padding: 20px; margin-bottom: 25px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                        <span class="status-dot online"></span>
+                        <span style="font-weight: 600; color: var(--success-color);">Terhubung</span>
                     </div>
-                    <div class="status-info">
-                        <div class="status-item">
-                            <label><i class="fas fa-network-wired"></i> IP Address</label>
-                            <span><?php echo $ip_address; ?></span>
-                        </div>
-                        <div class="status-item">
-                            <label><i class="fas fa-stopwatch"></i> Durasi Sesi</label>
-                            <span id="sessionDuration"><?php echo sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds); ?></span>
-                        </div>
-                        <div class="status-item">
-                            <label><i class="fas fa-calendar-alt"></i> Tanggal Login</label>
-                            <span><?php echo date('d M Y', $login_time); ?></span>
-                        </div>
-                        <div class="status-item">
-                            <label><i class="fas fa-user-check"></i> Status Akun</label>
-                            <span class="badge badge-success">Aktif</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Usage Stats -->
-                <h3 style="margin-bottom: 15px; color: var(--gray-800);"><i class="fas fa-chart-pie"></i> Penggunaan Data</h3>
-                <div class="status-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                         <div>
-                            <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color);"><?php echo $data_used; ?> MB</span>
-                            <span style="color: var(--gray-600);"> / <?php echo $data_limit; ?> MB</span>
+                            <p style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 3px;">IP Address</p>
+                            <p style="font-weight: 500; color: var(--gray-700);"><?php echo $ip_address; ?></p>
                         </div>
-                        <span style="color: var(--gray-600);"><?php echo round($data_percentage); ?>% terpakai</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-bar-fill <?php echo $data_percentage > 80 ? 'danger' : ($data_percentage > 50 ? 'warning' : ''); ?>" 
-                             style="width: <?php echo $data_percentage; ?>%"></div>
-                    </div>
-                </div>
-
-                <div class="usage-stats">
-                    <div class="stat-card">
-                        <i class="fas fa-download"></i>
-                        <span class="value"><?php echo rand(50, 300); ?> MB</span>
-                        <span class="label">Download</span>
-                    </div>
-                    <div class="stat-card" style="background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));">
-                        <i class="fas fa-upload"></i>
-                        <span class="value"><?php echo rand(10, 100); ?> MB</span>
-                        <span class="label">Upload</span>
-                    </div>
-                    <div class="stat-card" style="background: linear-gradient(135deg, #6f42c1, #9b59b6);">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <span class="value"><?php echo rand(5, 20); ?> Mbps</span>
-                        <span class="label">Kecepatan</span>
+                        <div>
+                            <p style="font-size: 0.75rem; color: var(--gray-500); margin-bottom: 3px;">Durasi</p>
+                            <p style="font-weight: 500; color: var(--gray-700);" id="sessionDuration"><?php echo sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds); ?></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Login History -->
-                <h3 style="margin: 30px 0 15px; color: var(--gray-800);"><i class="fas fa-history"></i> Riwayat Login</h3>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tanggal & Waktu</th>
-                                <th>IP Address</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if (!empty($login_history)): ?>
-                                <?php foreach ($login_history as $history): ?>
-                                <tr>
-                                    <td><?php echo date('d M Y, H:i:s', strtotime($history['login_time'])); ?></td>
-                                    <td><?php echo htmlspecialchars($history['ip_address']); ?></td>
-                                    <td><span class="badge badge-success">Berhasil</span></td>
-                                </tr>
-                                <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td><?php echo date('d M Y, H:i:s', $login_time); ?></td>
-                                    <td><?php echo $ip_address; ?></td>
-                                    <td><span class="badge badge-success">Berhasil</span></td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- Logout Button -->
+                <a href="logout.php" class="btn btn-danger btn-block">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
 
-                <!-- Action Buttons -->
-                <div style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
-                    <a href="logout.php" class="btn btn-danger">
-                        <i class="fas fa-sign-out-alt"></i> Logout / Putuskan Koneksi
-                    </a>
-                    <a href="contact.php" class="btn btn-secondary">
-                        <i class="fas fa-headset"></i> Laporkan Masalah
-                    </a>
-                    <button class="btn btn-outline" onclick="location.reload()">
-                        <i class="fas fa-sync-alt"></i> Refresh Status
-                    </button>
-                </div>
-
-                <div class="footer-text">
-                    <p><i class="fas fa-info-circle"></i> Jika mengalami masalah koneksi, silakan logout dan login kembali.</p>
+                <div class="footer-text" style="margin-top: 25px;">
+                    <a href="contact.php" class="link" style="font-size: 0.9rem;"><i class="fas fa-headset"></i> Laporkan Masalah</a>
                 </div>
             </div>
         </div>
@@ -256,23 +157,16 @@ $ip_address = $_SERVER['REMOTE_ADDR'];
 
     <script src="js/main.js"></script>
     <script>
-        // Update session duration every second
         let sessionStart = <?php echo $login_time; ?>;
-        
         function updateSessionDuration() {
             let now = Math.floor(Date.now() / 1000);
             let duration = now - sessionStart;
-            
             let hours = Math.floor(duration / 3600);
             let minutes = Math.floor((duration % 3600) / 60);
             let seconds = duration % 60;
-            
             document.getElementById('sessionDuration').textContent = 
-                String(hours).padStart(2, '0') + ':' + 
-                String(minutes).padStart(2, '0') + ':' + 
-                String(seconds).padStart(2, '0');
+                String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
         }
-        
         setInterval(updateSessionDuration, 1000);
     </script>
 </body>

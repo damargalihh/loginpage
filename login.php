@@ -86,10 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <nav class="navbar">
         <div class="container">
             <a href="index.php" class="navbar-brand">
-                <img src="https://via.placeholder.com/45x45/1a5f7a/ffffff?text=UM" alt="Logo UMPKU">
+                <img src="logo_web_umpku_color.png" alt="Logo UMPKU">
                 <div class="brand-text">
                     <span>Hotspot UMPKU</span>
-                    <span class="brand-sub">Internet Kampus</span>
                 </div>
             </a>
             <button class="menu-toggle" onclick="toggleMenu()">
@@ -99,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="login.php" class="active"><i class="fas fa-sign-in-alt"></i> Login</a></li>
                 <li><a href="register.php"><i class="fas fa-user-plus"></i> Daftar</a></li>
-                <li><a href="contact.php"><i class="fas fa-envelope"></i> Kontak</a></li>
+                <li><a href="contact.php"><i class="fas fa-headset"></i> Kontak</a></li>
             </ul>
         </div>
     </nav>
@@ -107,12 +106,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Main Content -->
     <main class="main-content">
         <div class="card">
-            <div class="card-header">
-                <img src="https://via.placeholder.com/80x80/ffffff/1a5f7a?text=UM" alt="Logo" class="logo">
-                <h1>Login Hotspot</h1>
-                <p>Masuk untuk mengakses internet kampus</p>
-            </div>
-            <div class="card-body">
+            <div class="card-body" style="padding: 40px;">
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <img src="logogram.png" alt="Logo" style="width: 80px; height: 80px; margin-bottom: 15px;">
+                    <h1 style="font-size: 1.5rem; color: var(--gray-800);">Login Hotspot</h1>
+                </div>
+
                 <?php if ($error): ?>
                 <div class="alert alert-danger">
                     <i class="fas fa-exclamation-circle"></i>
@@ -120,20 +119,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <?php endif; ?>
 
-                <?php if ($success): ?>
-                <div class="alert alert-success">
-                    <i class="fas fa-check-circle"></i>
-                    <?php echo $success; ?>
-                </div>
-                <?php endif; ?>
-
                 <form action="login.php" method="POST" id="loginForm">
                     <div class="form-group">
-                        <label for="nim">NIM (Nomor Induk Mahasiswa)</label>
+                        <label for="nim">NIM</label>
                         <div class="input-group">
                             <i class="fas fa-id-card"></i>
                             <input type="text" class="form-control" id="nim" name="nim" 
-                                   placeholder="Masukkan NIM Anda" required
+                                   placeholder="Nomor Induk Mahasiswa" required
                                    value="<?php echo isset($_POST['nim']) ? htmlspecialchars($_POST['nim']) : ''; ?>">
                         </div>
                     </div>
@@ -150,32 +142,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input type="checkbox" id="remember" name="remember">
-                            <label for="remember">Ingat saya di perangkat ini</label>
-                        </div>
-                    </div>
-
                     <button type="submit" class="btn btn-primary btn-block">
                         <i class="fas fa-sign-in-alt"></i> Masuk
                     </button>
                 </form>
 
-                <div class="divider">
-                    <span>atau</span>
-                </div>
-
-                <div style="text-align: center;">
-                    <p style="margin-bottom: 15px; color: var(--gray-600);">Belum punya akun?</p>
-                    <a href="register.php" class="btn btn-outline btn-block">
-                        <i class="fas fa-user-plus"></i> Daftar Sekarang
-                    </a>
-                </div>
-
-                <div class="footer-text">
-                    <p><a href="#" class="link">Lupa Password?</a></p>
-                    <p style="margin-top: 15px;">Butuh bantuan? <a href="contact.php" class="link">Hubungi IT Support</a></p>
+                <div class="footer-text" style="margin-top: 25px;">
+                    <p>Belum punya akun? <a href="register.php" class="link">Daftar</a></p>
                 </div>
             </div>
         </div>
