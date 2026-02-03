@@ -99,7 +99,7 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
                     <!-- Left: Map -->
                     <div style="border-radius: 12px; overflow: hidden; min-height: 300px;">
                         <iframe 
-                            src="https://maps.google.com/maps?q=-7.5389,110.8156&z=17&output=embed" 
+                            src="https://maps.google.com/maps?q=Jl.+Tulang+Bawang+Sel.+No.26,+Kadipiro,+Banjarsari,+Surakarta&z=18&output=embed" 
                             width="100%" 
                             height="100%" 
                             style="border:0; min-height: 300px;" 
