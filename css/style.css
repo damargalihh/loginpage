@@ -299,6 +299,41 @@ body {
     color: var(--gray-500);
     cursor: pointer;
     left: auto;
+    padding: 8px;
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.input-group .toggle-password:hover {
+    color: var(--primary-color);
+}
+
+/* Password field wrapper */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper .form-control {
+    padding-right: 50px;
+}
+
+.password-wrapper .toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.password-wrapper .toggle-password:hover {
+    color: var(--primary-color);
 }
 
 /* Checkbox */

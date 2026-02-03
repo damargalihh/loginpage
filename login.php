@@ -129,11 +129,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <div class="input-group">
-                            <i class="fas fa-lock"></i>
+                        <div class="password-wrapper">
                             <input type="password" class="form-control" id="password" name="password" 
                                    placeholder="Masukkan password" required>
-                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                            <button type="button" class="toggle-password" onclick="togglePassword('password', 'toggleIcon')">
                                 <i class="fas fa-eye" id="toggleIcon"></i>
                             </button>
                         </div>

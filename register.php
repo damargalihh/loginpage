@@ -157,12 +157,22 @@ $fakultas_list = [
 
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Minimal 6 karakter" required minlength="6">
+                        <div class="password-wrapper">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Minimal 6 karakter" required minlength="6">
+                            <button type="button" class="toggle-password" onclick="togglePassword('password', 'toggleIcon1')">
+                                <i class="fas fa-eye" id="toggleIcon1"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label for="confirm_password">Konfirmasi Password</label>
-                        <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Ulangi password" required>
+                        <div class="password-wrapper">
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Ulangi password" required>
+                            <button type="button" class="toggle-password" onclick="togglePassword('confirm_password', 'toggleIcon2')">
+                                <i class="fas fa-eye" id="toggleIcon2"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-block">
