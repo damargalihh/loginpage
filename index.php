@@ -42,76 +42,43 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="card card-wide">
-            <div class="card-body">
-                <div class="hero-section">
-                    <img src="logogram.png" alt="Logo" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px;">
-                    <h1>Selamat Datang di Hotspot UMPKU</h1>
-                    <p>Layanan internet gratis untuk seluruh civitas akademika Universitas Muhammadiyah Palangkaraya. Nikmati akses internet cepat dan stabil untuk mendukung kegiatan akademik Anda.</p>
-                    
-                    <div class="quick-actions">
-                        <a href="login.php" class="btn btn-primary">
-                            <i class="fas fa-sign-in-alt"></i> Masuk Sekarang
-                        </a>
-                        <a href="register.php" class="btn btn-outline">
-                            <i class="fas fa-user-plus"></i> Buat Akun
-                        </a>
-                    </div>
+        <div class="card" style="max-width: 500px;">
+            <div class="card-body" style="text-align: center; padding: 50px 40px;">
+                <!-- Logo -->
+                <img src="logogram.png" alt="Logo UMPKU" style="width: 120px; height: 120px; margin-bottom: 30px; filter: drop-shadow(0 10px 30px rgba(229, 57, 53, 0.3));">
+                
+                <!-- Title -->
+                <h1 style="font-size: 1.8rem; color: var(--gray-800); margin-bottom: 10px; font-weight: 700;">
+                    Hotspot UMPKU
+                </h1>
+                <p style="color: var(--gray-500); margin-bottom: 40px; font-size: 0.95rem;">
+                    Layanan Internet Kampus<br>
+                    <span style="font-size: 0.85rem;">Universitas Muhammadiyah Palangkaraya</span>
+                </p>
+
+                <!-- Action Buttons -->
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <a href="login.php" class="btn btn-primary btn-block" style="padding: 16px 28px; font-size: 1.05rem;">
+                        <i class="fas fa-sign-in-alt"></i> Masuk
+                    </a>
+                    <a href="register.php" class="btn btn-outline btn-block" style="padding: 16px 28px; font-size: 1.05rem;">
+                        <i class="fas fa-user-plus"></i> Buat Akun Baru
+                    </a>
                 </div>
 
-                <div class="features">
-                    <div class="feature-item">
-                        <i class="fas fa-bolt"></i>
-                        <h3>Cepat & Stabil</h3>
-                        <p>Koneksi internet berkecepatan tinggi untuk kebutuhan belajar dan penelitian</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Aman & Terpercaya</h3>
-                        <p>Sistem keamanan terjamin untuk melindungi privasi pengguna</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-clock"></i>
-                        <h3>24/7 Tersedia</h3>
-                        <p>Layanan internet tersedia sepanjang waktu untuk akses tanpa batas</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-headset"></i>
-                        <h3>Dukungan IT</h3>
-                        <p>Tim IT siap membantu mengatasi kendala koneksi Anda</p>
-                    </div>
+                <!-- Divider -->
+                <div class="divider" style="margin: 35px 0;">
+                    <span>Bantuan</span>
                 </div>
 
-                <div class="divider">
-                    <span>Cara Menggunakan</span>
-                </div>
+                <!-- Help Link -->
+                <a href="contact.php" class="link" style="display: inline-flex; align-items: center; gap: 8px; color: var(--gray-600);">
+                    <i class="fas fa-headset"></i> Hubungi IT Support
+                </a>
 
-                <div class="features">
-                    <div class="feature-item">
-                        <i class="fas fa-wifi" style="color: var(--info-color);"></i>
-                        <h3>1. Hubungkan WiFi</h3>
-                        <p>Sambungkan perangkat ke jaringan "UMPKU-Hotspot"</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-user-circle" style="color: var(--warning-color);"></i>
-                        <h3>2. Buka Browser</h3>
-                        <p>Halaman login akan muncul otomatis</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-key" style="color: var(--success-color);"></i>
-                        <h3>3. Login</h3>
-                        <p>Masukkan NIM dan password Anda</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-globe" style="color: var(--primary-color);"></i>
-                        <h3>4. Jelajahi Internet</h3>
-                        <p>Nikmati akses internet tanpa batas</p>
-                    </div>
-                </div>
-
-                <div class="footer-text">
-                    <p>&copy; 2024 Universitas Muhammadiyah Palangkaraya. All Rights Reserved.</p>
-                    <p>UPT Teknologi Informasi dan Komunikasi</p>
+                <!-- Footer -->
+                <div class="footer-text" style="margin-top: 40px;">
+                    <p style="font-size: 0.8rem;">&copy; 2024 UM Palangkaraya</p>
                 </div>
             </div>
         </div>

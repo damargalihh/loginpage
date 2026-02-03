@@ -5,15 +5,15 @@
 
 /* CSS Variables */
 :root {
-    --primary-color: #1a5f7a;
-    --primary-dark: #134b61;
-    --primary-light: #2d8ab8;
-    --secondary-color: #57c5b6;
-    --accent-color: #159895;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --info-color: #17a2b8;
+    --primary-color: #E53935;
+    --primary-dark: #C62828;
+    --primary-light: #EF5350;
+    --secondary-color: #FB8C00;
+    --accent-color: #FBC02D;
+    --success-color: #43A047;
+    --warning-color: #FBC02D;
+    --danger-color: #E53935;
+    --info-color: #FB8C00;
     --light-color: #f8f9fa;
     --dark-color: #212529;
     --gray-100: #f8f9fa;
@@ -46,7 +46,7 @@ html {
 
 body {
     font-family: var(--font-primary);
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, #0d3d4d 100%);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
     min-height: 100vh;
     color: var(--dark-color);
     line-height: 1.6;
@@ -269,7 +269,7 @@ body {
     outline: none;
     border-color: var(--primary-color);
     background: white;
-    box-shadow: 0 0 0 4px rgba(26, 95, 122, 0.1);
+    box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.1);
 }
 
 .form-control::placeholder {
@@ -355,14 +355,14 @@ select.form-control {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
 }
 
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
     transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    box-shadow: 0 8px 25px rgba(229, 57, 53, 0.35);
 }
 
 .btn-secondary {
@@ -555,7 +555,7 @@ select.form-control {
 .stat-card {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: var(--border-radius);
     color: white;
 }
