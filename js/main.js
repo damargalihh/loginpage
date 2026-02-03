@@ -83,11 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // NIM input - only numbers
+    // NIM input - allow letters and numbers (alphanumeric)
     const nimInput = document.getElementById('nim');
     if (nimInput) {
         nimInput.addEventListener('input', function() {
-            this.value = this.value.replace(/[^0-9]/g, '');
+            this.value = this.value.replace(/[^A-Za-z0-9]/g, '');
         });
     }
 
