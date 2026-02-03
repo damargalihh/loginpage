@@ -99,7 +99,7 @@ $prefill_nim = isset($_SESSION['nim']) ? $_SESSION['nim'] : '';
                     <!-- Left: Map -->
                     <div style="border-radius: 12px; overflow: hidden; min-height: 300px;">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.1086858949907!2d110.82889931477557!3d-7.555648794555099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16e9b9c14405%3A0x7df5b3b3a0a0f9e4!2sITS%20PKU%20Muhammadiyah%20Surakarta!5e0!3m2!1sen!2sid!4v1699000000000!5m2!1sen!2sid" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d988.7777039654091!2d110.8297!3d-7.5557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a16e9b9c14405%3A0x7df5b3b3a0a0f9e4!2sITS%20PKU%20Muhammadiyah%20Surakarta!5e0!3m2!1sen!2sid!4v1699000000000!5m2!1sen!2sid&markers=color:red%7C-7.5557,110.8297" 
                             width="100%" 
                             height="100%" 
                             style="border:0; min-height: 300px;" 

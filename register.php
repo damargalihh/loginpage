@@ -24,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = 'Password minimal 6 karakter!';
     } elseif ($password !== $confirm_password) {
         $error = 'Konfirmasi password tidak cocok!';
-    } elseif (!preg_match('/^[0-9]+$/', $nim)) {
-        $error = 'NIM hanya boleh berisi angka!';
+    } elseif (!preg_match('/^[A-Za-z0-9]+$/', $nim)) {
+        $error = 'NIM hanya boleh berisi huruf dan angka!';
     } else {
         try {
             $conn = getConnection();
